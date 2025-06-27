@@ -1,10 +1,7 @@
 package com.example.demoslide
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class GridBannerActivity : AppCompatActivity() {
@@ -28,8 +25,6 @@ class GridBannerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_grid_banner)
 
         val gridBannerRecyclerView = findViewById<RecyclerView>(R.id.gridBannerRecyclerView)
-//        val btnSwitchToHorizontal = findViewById<Button>(R.id.btnSwitchToHorizontal)
-//        val btnSwitchToVertical = findViewById<Button>(R.id.btnSwitchToVertical)
         
         // Use GridLayoutManager for proper grid layout
         val gridLayoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 3) // 3 columns
@@ -37,18 +32,6 @@ class GridBannerActivity : AppCompatActivity() {
         
         val gridBannerAdapter = GridBannerAdapter(imageUrls)
         gridBannerRecyclerView.adapter = gridBannerAdapter
-
-        // Button click listeners to switch between banner types
-//        btnSwitchToHorizontal.setOnClickListener {
-//            val intent = Intent(this, MainActivity::class.java)
-//            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-//            startActivity(intent)
-//        }
-//
-//        btnSwitchToVertical.setOnClickListener {
-//            val intent = Intent(this, VerticalBannerActivity::class.java)
-//            startActivity(intent)
-//        }
 
         // Snap to center for carousel effect
         snapHelper = androidx.recyclerview.widget.LinearSnapHelper()
